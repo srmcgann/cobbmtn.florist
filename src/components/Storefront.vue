@@ -17,7 +17,7 @@
     <div class="spacer" style="margin-top: 0;"></div>
     <div class="sectionTitle">Welcome!</div>
       <video
-			  v-if="showFeatureVid"
+        v-if="showFeatureVid"
         autoplay
         muted
         loop
@@ -25,10 +25,10 @@
         class="featureVidMedia"
         ref="featureVidMedia"
       ></video>
-			<div v-else class="featureVidMedia" ref="featureVidMedia">
-			  <canvas ref="c" class="canvasAnimation">
-				</canvas>
-			</div>
+      <div v-else class="featureVidMedia" ref="featureVidMedia">
+        <canvas ref="c" class="canvasAnimation">
+        </canvas>
+      </div>
 
     <a id="flowers"></a>
     <div class="spacer"></div>
@@ -88,7 +88,7 @@
                     || (event.keyCode==8) || (event.keyCode==9) 
                     || (event.keyCode>34 && event.keyCode<40) 
                     || (event.keyCode==46) )"
-										@input="updateDCPrice()" type="text" ref="currentDCPrice" class="sliderInput" v-model="DCPrice">
+                    @input="updateDCPrice()" type="text" ref="currentDCPrice" class="sliderInput" v-model="DCPrice">
       <div style="font-size: .6em;">choose how much you wish to spend<br><span class="disclaimer">($50 minimum on Designer's Choice arrangements)</span></div>
       <button
         alt="Add to cart"
@@ -213,7 +213,7 @@
     <div class="sectionTitle">Contact</div>
     <div class="contactText"><br>
       Office: (707) 974-9137<br>
-			<a href="./studio" target="_blank" style="text-decoration: none; color: #ff4; background: #a665;padding-left: 10px; padding-right: 10px;border-radius: 10px;">view photos of my studio</a><br>
+      <a href="./studio" target="_blank" style="text-decoration: none; color: #ff4; background: #a665;padding-left: 10px; padding-right: 10px;border-radius: 10px;">view photos of my studio</a><br>
       General Inquiries:<br><a href="mailto:cobbmtnflwrs@gmail.com" class="franchiseLink">cobbmtnflwrs@gmail.com</a><br><br>
 
       Loch Lomond, CA 95461<br>
@@ -250,13 +250,13 @@ export default {
       copyright: '&copy;' + (new Date()).getFullYear() + '<br>Cobb Mountain Flowers<br>All Rights Reserved<br>',
       curPage: 0,
       /*
-			featureVid: 'https://lookie.jsbot.net/uploads/' + [
+      featureVid: 'https://lookie.jsbot.net/uploads/' + [
         '1gG241',
         '28oCGn'
       ][Math.random()*1|0] + '.mp4',
-			*/
+      */
       featureVid: '/cmf.mp4',
-			content: {
+      content: {
         financingCategories: [],
         serviceCategories: [],
         departments: [],
@@ -265,37 +265,37 @@ export default {
         franchises: []
       },
       cat: false,
-			showFeatureVid: false,
-			canvasVars:{
-			  bgimg: null,
-				bgimgoverlay: null,
-				drawRotatedImage: null,
-				go: false,
-				pics: [],
-				B: [],
-			},
-			c: null,
-			x: null,
-			S: null,
-			C: null,
-			t: 0,
+      showFeatureVid: false,
+      canvasVars:{
+        bgimg: null,
+        bgimgoverlay: null,
+        drawRotatedImage: null,
+        go: false,
+        pics: [],
+        B: [],
+      },
+      c: null,
+      x: null,
+      S: null,
+      C: null,
+      t: 0,
       expandThumb: false,
-			DCPrice: '$100',
-			WrappedPrice: '$20',
+      DCPrice: '$100',
+      WrappedPrice: '$20',
       lightBoxPhoto: []
     }
   },
  methods:{
-	  Draw(){
+    Draw(){
 
       let x = this.x
-			let t = this.t
+      let t = this.t
       let c = this.c
       let w
-			let Rn = Math.random
-			let S = this.S
-			let C = this.C
-			let X, Y
+      let Rn = Math.random
+      let S = this.S
+      let C = this.C
+      let X, Y
 
       if(!t){
         this.canvasVars.bgimg = new Image()
@@ -312,7 +312,7 @@ export default {
           img.addEventListener('load', ()=>{
             v.loaded = true
           })
-					let j, src = 'https://lookie.jsbot.net/uploads/'
+          let j, src = 'https://lookie.jsbot.net/uploads/'
           switch(i){
             case 0: j=0; src+='20l7pH.png';  break
             case 1: j=0; src+='20l7pH.png';  break
@@ -362,19 +362,19 @@ export default {
       }
 
       this.t += 1/60
-			requestAnimationFrame(this.Draw)
-		},
+      requestAnimationFrame(this.Draw)
+    },
     updateDCPrice(){
-		   this.$refs.slider.noUiSlider.set(+this.$refs.currentDCPrice.value.substring(this.$refs.currentDCPrice.value.substring(0,1)=='$'?1:0))
-		   this.$refs.currentDCPrice.value = ((this.$refs.currentDCPrice.value)+'').trim()
-			 this.$refs.currentDCPrice.value = ((''+this.$refs.currentDCPrice.value).substring(0, 1) == '$' ? '' : '$') + this.$refs.currentDCPrice.value
-		},
+       this.$refs.slider.noUiSlider.set(+this.$refs.currentDCPrice.value.substring(this.$refs.currentDCPrice.value.substring(0,1)=='$'?1:0))
+       this.$refs.currentDCPrice.value = ((this.$refs.currentDCPrice.value)+'').trim()
+       this.$refs.currentDCPrice.value = ((''+this.$refs.currentDCPrice.value).substring(0, 1) == '$' ? '' : '$') + this.$refs.currentDCPrice.value
+    },
     updateWrappedPrice(){
        this.$refs.slider2.noUiSlider.set(+this.$refs.currentWrappedPrice.value.substring(this.$refs.currentWrappedPrice.value.substring(0,1)=='$'?1:0))
        this.$refs.currentWrappedPrice.value = ((this.$refs.currentWrappedPrice.value)+'').trim()
        this.$refs.currentWrappedPrice.value = ((''+this.$refs.currentWrappedPrice.value).substring(0, 1) == '$' ? '' : '$') + this.$refs.currentWrappedPrice.value
     },
-		onOpened (val) {
+    onOpened (val) {
       if (!val) this.expandThumb = false
     },
     showProduct(product){
@@ -464,15 +464,15 @@ export default {
     category() {
       return this.cat ? 1 : 2
     },
-		filteredCategories(){
-			if(typeof this.content.flowerCategories !='undefined'){
-  			return this.content.flowerCategories.filter(v=>{
-	  			return v.name == 'Featured Products'
-		   	})
-			}else{
-				return []
-		  }
-		},
+    filteredCategories(){
+      if(typeof this.content.flowerCategories !='undefined'){
+        return this.content.flowerCategories.filter(v=>{
+          return v.name == 'Featured Products'
+        })
+      }else{
+        return []
+      }
+    },
     filteredFlowers2(){
       if(typeof this.content.flowerCategories !='undefined'){
         return this.content.flowerCategories.filter(v=>{
@@ -484,29 +484,29 @@ export default {
     }
   },
   mounted () {
-		if(!this.showFeatureVid) {
-			this.$nextTick(()=>{
-				this.c = this.$refs.c
-				this.c.width = 1920
-				this.c.height = 1080
-			  this.x = this.c.getContext('2d')
-			  this.S = Math.sin
-			  this.C = Math.cos
-			  this.Draw()
+    if(!this.showFeatureVid) {
+      this.$nextTick(()=>{
+        this.c = this.$refs.c
+        this.c.width = 1920
+        this.c.height = 1080
+        this.x = this.c.getContext('2d')
+        this.S = Math.sin
+        this.C = Math.cos
+        this.Draw()
         let w = document.getElementsByTagName('body')[0].clientWidth;
-				if(w < 500){
-				  this.$refs.featureVidMedia.style.width = '400px'
-					this.$refs.featureVidMedia.style.height = 'calc(400px / 1.7777777777778)'
-				} else {
-				  if(w > 1e3){
+        if(w < 500){
+          this.$refs.featureVidMedia.style.width = '400px'
+          this.$refs.featureVidMedia.style.height = 'calc(400px / 1.7777777777778)'
+        } else {
+          if(w > 1e3){
             this.$refs.featureVidMedia.style.width = '800px'
             this.$refs.featureVidMedia.style.height = 'calc(800px / 1.7777777777778)'
-				  } else {
-						this.$refs.featureVidMedia.style.width = '80vw'
-						this.$refs.featureVidMedia.style.height = 'calc(80vw / 1.7777777777778)'
-					}
-				}
-				window.addEventListener('resize', () => {
+          } else {
+            this.$refs.featureVidMedia.style.width = '80vw'
+            this.$refs.featureVidMedia.style.height = 'calc(80vw / 1.7777777777778)'
+          }
+        }
+        window.addEventListener('resize', () => {
           let w = document.getElementsByTagName('body')[0].clientWidth;
           if(w < 500){
             this.$refs.featureVidMedia.style.width = '400px'
@@ -520,9 +520,9 @@ export default {
               this.$refs.featureVidMedia.style.height = 'calc(80vw / 1.7777777777778)'
             }
           }
-				})
-		  })
-		}
+        })
+      })
+    }
     let url = "https://cobbmtn.florist/static/getData.php"
     fetch(url, {
       mode: 'cors',
@@ -641,12 +641,12 @@ canvas{
 .featureVidMedia{
   margin-top: 25px;
   /*
-	max-height: 400px;
+  max-height: 400px;
   margin-left: -16px;
-	*/
-	position: relative;
-	left: 50%;
-	transform: translatex(-50%);
+  */
+  position: relative;
+  left: 50%;
+  transform: translatex(-50%);
   padding: 15px;
   border-radius: 4px;
   background: #def4;
@@ -661,7 +661,7 @@ canvas{
 }
 .canvasAnimation{
   width: 100%;
-	height: 100%;
+  height: 100%;
 }
 .addCardButton{
   width: 60px;
@@ -1096,19 +1096,19 @@ li{
 }
 .sliderInput{
   font-family: 'Crafty Girls';
-	width: 100px;
-	text-align: center;
-	font-size: 32px;
-	background: #123c;
-	color: #fff;
-	border: none;
-	padding-top: 5px;
-	padding-bottom: 0;
+  width: 100px;
+  text-align: center;
+  font-size: 32px;
+  background: #123c;
+  color: #fff;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 0;
   height: 40px;
-	margin-top: 10px;
+  margin-top: 10px;
   position: relative;
-	z-index: 90;
-	border: 1px solid #456;
+  z-index: 90;
+  border: 1px solid #456;
   border-bottom: 2px solid #4f8;
 }
 .sliderInput:focus{
