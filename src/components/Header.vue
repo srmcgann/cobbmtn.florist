@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <button style="position: fixed; top: 0; left: calc(50% - 12px); transform: translatex(-50%);margin-top: 15px; z-index: 2000;width: 70px; height: 70px; background: url(https://lookie.jsbot.net/uploads/I3LHo.png); background-position: center center; background-repeat: no-repeat;background-size: 55px 55px;background-color: #c26;border: 2px solid #fff8;" class="snipcart-checkout"></button>
+    <button style="position: fixed; top: 0; left: calc(50% - 12px); transform: translatex(-50%);margin-top: 15px; z-index: 2000;width: 70px; height: 70px; background: url(https://jsbot.cantelope.org/uploads/I3LHo.png); background-position: center center; background-repeat: no-repeat;background-size: 55px 55px;background-color: #c26;border: 2px solid #fff8;" class="snipcart-checkout"></button>
     <div ref="titleBarDiv" class="titleBarDiv">
     </div>
     <div class="headerDiv">
@@ -9,7 +9,7 @@
         <div v-if="siteEntered" class="headerSubText"><i>Flowers</i></div>
       </div>
       <div v-if="siteEntered" ref="headerLogo" class="headerLogo">
-        <img src="https://lookie.jsbot.net/uploads/1hsPKQ.png" @click="goHome()" class="headerLogo1">
+        <img src="https://jsbot.cantelope.org/uploads/1hsPKQ.png" @click="goHome()" class="headerLogo1">
       </div>
       <div ref="introVid" class="introVid">
         <button v-if="!siteEntered"
@@ -40,7 +40,7 @@ export default {
   data () {
     return {
       siteEntered: false,
-      introVid: 'https://lookie.jsbot.net/uploads/' + [
+      introVid: 'https://jsbot.cantelope.org/uploads/' + [
         '28i49A',
         '24yHao',
         '24yHao',

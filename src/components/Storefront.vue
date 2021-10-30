@@ -80,14 +80,12 @@
 
     <div id="DCChosenPrice" style="margin: 20px;font-size:32px; text-align: center;background: linear-gradient(-45deg, #012a, #0000);color: #fff;padding: 10px; padding-bottom: 30px;width:400px;margin-left: auto;margin-right: auto;margin-top: 90px;padding-top:20px;">
       <div style="font-size: .8em">Designer's Choice</div>
-      <img src="https://lookie.jsbot.net/uploads/Xk6oO.jpg" style="width: 250px;"><br>
+      <img src="https://jsbot.cantelope.org/uploads/Xk6oO.jpg" style="width: 250px;"><br>
       <div ref="slider" style="display:inline-block;width: 300px;"></div>
-      <input @keyup.enter="createDCButton($refs.slider.noUiSlider.get())" onkeydown="return ( event.ctrlKey || event.altKey 
+      <input @keyup.enter="createDCButton($refs.slider.noUiSlider.get())" onkeydown="return  (this.value.split('.')[1].length <2 || event.keyCode==8) && (event.keyCode==46 || event.keyCode == 190 || (  event.ctrlKey || event.altKey 
                     || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
                     || (95<event.keyCode && event.keyCode<106)
-                    || (event.keyCode==8) || (event.keyCode==9) 
-                    || (event.keyCode>34 && event.keyCode<40) 
-                    || (event.keyCode==46) )"
+                    || (event.keyCode==8) || (event.keyCode==9))) || (event.keyCode>34 && event.keyCode<40)" 
                     @input="updateDCPrice()" type="text" ref="currentDCPrice" class="sliderInput" v-model="DCPrice">
       <div style="font-size: .6em;">choose how much you wish to spend<br><span class="disclaimer">($50 minimum on Designer's Choice arrangements)</span></div>
       <button
@@ -108,14 +106,12 @@
 
     <div id="wrappedChosenPrice" style="margin: 20px;font-size:32px; text-align: center;background: linear-gradient(-45deg, #012a, #0000);color: #fff;padding: 10px; padding-bottom: 30px;width:400px;margin-left: auto;margin-right: auto;margin-top: 90px;padding-top:20px;">
       <div style="font-size: .8em;">Wrapped Arrangements</div>
-      <img src="https://lookie.jsbot.net/uploads/15tPHr.jpg" style="width: 250px;"><br>
+      <img src="https://jsbot.cantelope.org/uploads/15tPHr.jpg" style="width: 250px;"><br>
       <div ref="slider2" style="display:inline-block;width: 300px;"></div>
-      <input @keyup.enter="createWrappedButton($refs.slider2.noUiSlider.get())" onkeydown="return ( event.ctrlKey || event.altKey
+      <input @keyup.enter="createWrappedButton($refs.slider2.noUiSlider.get())" onkeydown="return  (this.value.split('.')[1].length <2 || event.keyCode==8) && (event.keyCode==46 || event.keyCode == 190 || (  event.ctrlKey || event.altKey
                     || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false)
                     || (95<event.keyCode && event.keyCode<106)
-                    || (event.keyCode==8) || (event.keyCode==9)
-                    || (event.keyCode>34 && event.keyCode<40)
-                    || (event.keyCode==46) )"
+                    || (event.keyCode==8) || (event.keyCode==9))) || (event.keyCode>34 && event.keyCode<40)"
                     @input="updateWrappedPrice()" type="text" ref="currentWrappedPrice" class="sliderInput" v-model="WrappedPrice">
       <div style="font-size: .6em;">choose how much you wish to spend<br><span class="disclaimer">($5 minimum on Wrapped Arrangements)</span></div>
       <button
@@ -123,6 +119,42 @@
         class="addButton"
         style="width: 200px;height: 35px;"
         @click="createWrappedButton($refs.slider2.noUiSlider.get())"
+      >Add to Cart</button>
+    </div>
+
+    <div id="giftChosenPrice" style="margin: 20px;font-size:32px; text-align: center;background: linear-gradient(-45deg, #012a, #0000);color: #fff;padding: 10px; padding-bottom: 30px;width:400px;margin-left: auto;margin-right: auto;margin-top: 90px;padding-top:20px;">
+      <div style="font-size: .8em;">Gifts</div>
+      <img src="https://jsbot.cantelope.org/uploads/14JQuG.jpg" style="width: 250px;"><br>
+      <div ref="slider3" style="display:inline-block;width: 300px;"></div>
+      <input @keyup.enter="createGiftButton($refs.slider3.noUiSlider.get())" onkeydown="return  (this.value.split('.')[1].length <2 || event.keyCode==8) && (event.keyCode==46 || event.keyCode == 190 || (  event.ctrlKey || event.altKey
+                    || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false)
+                    || (95<event.keyCode && event.keyCode<106)
+                    || (event.keyCode==8) || (event.keyCode==9))) || (event.keyCode>34 && event.keyCode<40)"
+                    @input="updateGiftPrice()" type="text" ref="currentGiftPrice" class="sliderInput" v-model="GiftPrice">
+      <div style="font-size: .6em;">choose how much you wish to spend<br><span class="disclaimer">($40 minimum on gifts)</span></div>
+      <button
+        alt="Add to cart"
+        class="addButton"
+        style="width: 200px;height: 35px;"
+        @click="createGiftButton($refs.slider3.noUiSlider.get())"
+      >Add to Cart</button>
+    </div>
+
+    <div id="plantsChosenPrice" style="margin: 20px;font-size:32px; text-align: center;background: linear-gradient(-45deg, #012a, #0000);color: #fff;padding: 10px; padding-bottom: 30px;width:400px;margin-left: auto;margin-right: auto;margin-top: 90px;padding-top:20px;">
+      <div style="font-size: .8em;">Plants and Dish Gardens</div>
+      <img src="https://jsbot.cantelope.org/uploads/2h68aC.jpg" style="width: 250px;"><br>
+      <div ref="slider4" style="display:inline-block;width: 300px;"></div>
+      <input @keyup.enter="createPlantButton($refs.slider4.noUiSlider.get())" onkeydown="return  (this.value.split('.')[1].length <2 || event.keyCode==8) && (event.keyCode==46 || event.keyCode == 190 || (  event.ctrlKey || event.altKey
+                    || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false)
+                    || (95<event.keyCode && event.keyCode<106)
+                    || (event.keyCode==8) || (event.keyCode==9))) || (event.keyCode>34 && event.keyCode<40)"
+                    @input="updatePlantPrice()" type="text" ref="currentPlantPrice" class="sliderInput" v-model="PlantPrice">
+      <div style="font-size: .6em;">choose how much you wish to spend<br><span class="disclaimer">($55 minimum on plants and dish gardens)</span></div>
+      <button
+        alt="Add to cart"
+        class="addButton"
+        style="width: 200px;height: 35px;"
+        @click="createPlantButton($refs.slider4.noUiSlider.get())"
       >Add to Cart</button>
     </div>
 
@@ -250,7 +282,7 @@ export default {
       copyright: '&copy;' + (new Date()).getFullYear() + '<br>Cobb Mountain Flowers<br>All Rights Reserved<br>',
       curPage: 0,
       /*
-      featureVid: 'https://lookie.jsbot.net/uploads/' + [
+      featureVid: 'https://jsbot.cantelope.org/uploads/' + [
         '1gG241',
         '28oCGn'
       ][Math.random()*1|0] + '.mp4',
@@ -282,6 +314,8 @@ export default {
       expandThumb: false,
       DCPrice: '$100',
       WrappedPrice: '$20',
+      GiftPrice: '$100',
+      PlantPrice: '$100',
       lightBoxPhoto: []
     }
   },
@@ -304,15 +338,15 @@ export default {
         this.canvasVars.bgimg.addEventListener('load',()=>{
           this.canvasVars.go=true
         })
-        this.canvasVars.bgimg.src='https://lookie.jsbot.net/uploads/1plRgd.jpg'
-        this.canvasVars.bgimgoverlay.src='https://lookie.jsbot.net/uploads/1B0QxQ.png'
+        this.canvasVars.bgimg.src='https://jsbot.cantelope.org/uploads/1plRgd.jpg'
+        this.canvasVars.bgimgoverlay.src='https://jsbot.cantelope.org/uploads/1B0QxQ.png'
         this.canvasVars.pics=Array(10).fill().map((v, i)=>{
           let img = new Image()
           v = {img, loaded: false}
           img.addEventListener('load', ()=>{
             v.loaded = true
           })
-          let j, src = 'https://lookie.jsbot.net/uploads/'
+          let j, src = 'https://jsbot.cantelope.org/uploads/'
           switch(i){
             case 0: j=0; src+='20l7pH.png';  break
             case 1: j=0; src+='20l7pH.png';  break
@@ -374,6 +408,16 @@ export default {
        this.$refs.currentWrappedPrice.value = ((this.$refs.currentWrappedPrice.value)+'').trim()
        this.$refs.currentWrappedPrice.value = ((''+this.$refs.currentWrappedPrice.value).substring(0, 1) == '$' ? '' : '$') + this.$refs.currentWrappedPrice.value
     },
+    updateGiftPrice(){
+       this.$refs.slider3.noUiSlider.set(+this.$refs.currentGiftPrice.value.substring(this.$refs.currentGiftPrice.value.substring(0,1)=='$'?1:0))
+       this.$refs.currentGiftPrice.value = ((this.$refs.currentGiftPrice.value)+'').trim()
+       this.$refs.currentGiftPrice.value = ((''+this.$refs.currentGiftPrice.value).substring(0, 1) == '$' ? '' : '$') + this.$refs.currentGiftPrice.value
+    },
+    updatePlantPrice(){
+       this.$refs.slider4.noUiSlider.set(+this.$refs.currentPlantPrice.value.substring(this.$refs.currentPlantPrice.value.substring(0,1)=='$'?1:0))
+       this.$refs.currentPlantPrice.value = ((this.$refs.currentPlantPrice.value)+'').trim()
+       this.$refs.currentPlantPrice.value = ((''+this.$refs.currentPlantPrice.value).substring(0, 1) == '$' ? '' : '$') + this.$refs.currentPlantPrice.value
+    },
     onOpened (val) {
       if (!val) this.expandThumb = false
     },
@@ -415,8 +459,8 @@ export default {
             el.setAttribute('data-item-price', +p)
             el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
             el.setAttribute('data-item-description', "Plus Delivery")
-            el.setAttribute('data-item-image', 'https://lookie.jsbot.net/uploads/Xk6oO.jpg')
-            el.setAttribute('data-item-name', "Designer's Choice - $" + Math.round(p))
+            el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/Xk6oO.jpg')
+            el.setAttribute('data-item-name', "Designer's Choice - $" + (Math.round(p*100)/100))
             el.className = 'snipcart-add-item'
             el.style.display = 'none'
             document.body.appendChild(el)
@@ -448,8 +492,74 @@ export default {
             el.setAttribute('data-item-price', +p)
             el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
             el.setAttribute('data-item-description', "Wrapped")
-            el.setAttribute('data-item-image', 'https://lookie.jsbot.net/uploads/15tPHr.jpg')
-            el.setAttribute('data-item-name', "Wrapped - $" + Math.round(p))
+            el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/15tPHr.jpg')
+            el.setAttribute('data-item-name', "Wrapped - $" + (Math.round(p*100)/100))
+            el.className = 'snipcart-add-item'
+            el.style.display = 'none'
+            document.body.appendChild(el)
+            el.click()
+            el.parentNode.removeChild(el)
+          }
+        }
+      })
+    },
+    createGiftButton(price){
+      var p=price.substring(1)
+      let id=0
+      let sendData = {type: "Gifts", price: p}
+      let URL = '/static/getProductID.php'
+      fetch(URL,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(sendData),
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data) {
+          id=data
+          if(id){
+            let el = document.createElement('button')
+            el.setAttribute('data-item-id', id)
+            el.setAttribute('data-item-price', +p)
+            el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
+            el.setAttribute('data-item-description', "Gift")
+            el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/14JQuG.jpg')
+            el.setAttribute('data-item-name', "Gift - $" + (Math.round(p*100)/100))
+            el.className = 'snipcart-add-item'
+            el.style.display = 'none'
+            document.body.appendChild(el)
+            el.click()
+            el.parentNode.removeChild(el)
+          }
+        }
+      })
+    },
+    createPlantButton(price){
+      var p=price.substring(1)
+      let id=0
+      let sendData = {type: "Plants", price: p}
+      let URL = '/static/getProductID.php'
+      fetch(URL,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(sendData),
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data) {
+          id=data
+          if(id){
+            let el = document.createElement('button')
+            el.setAttribute('data-item-id', id)
+            el.setAttribute('data-item-price', +p)
+            el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
+            el.setAttribute('data-item-description', "Plant")
+            el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/2h68aC.jpg')
+            el.setAttribute('data-item-name', "Plant - $" + (Math.round(p*100)/100))
             el.className = 'snipcart-add-item'
             el.style.display = 'none'
             document.body.appendChild(el)
@@ -545,18 +655,18 @@ export default {
           start: [100],
           connect: true,
           range: {
-              'min': 50,
+              'min': 55,
               'max': 200
           },
           pips: {
               mode: 'steps',
               stepped: true,
-              density: 10
+              density: 200/50
           },
           behaviour: 'tap-drag',
           format: {
               to: function (value) {
-                  return '$' + Math.round(value) + '';
+                  return '$' + (Math.round(value*100)/100) + '';
               },
               from: function (value) {
                   return Number(value.replace(',-', ''));
@@ -582,12 +692,12 @@ export default {
           pips: {
               mode: 'steps',
               stepped: true,
-              density: 8 
+              density: 60/5
           },
           behaviour: 'tap-drag',
           format: {
               to: function (value) {
-                  return '$' + Math.round(value);
+                  return '$' + (Math.round(value*100)/100);
               },
               from: function (value) {
                   return Number(value.replace(',-', ''));
@@ -597,6 +707,66 @@ export default {
 
       slider2.noUiSlider.on('slide', e=> {
         currentWrappedPrice.value = e[0];
+      });
+
+      var slider3 = this.$refs.slider3
+      var currentGiftPrice = this.$refs.currentGiftPrice
+
+      noUiSlider.create(slider3, {
+          start: [100],
+          connect: true,
+          range: {
+              'min': 40,
+              'max': 200
+          },
+          pips: {
+              mode: 'steps',
+              stepped: true,
+              density: 60/5
+          },
+          behaviour: 'tap-drag',
+          format: {
+              to: function (value) {
+                  return '$' + (Math.round(value*100)/100);
+              },
+              from: function (value) {
+                  return Number(value.replace(',-', ''));
+              }
+          }
+      })
+
+      slider3.noUiSlider.on('slide', e=> {
+        currentGiftPrice.value = e[0];
+      });
+
+      var slider4 = this.$refs.slider4
+      var currentPlantPrice = this.$refs.currentPlantPrice
+
+      noUiSlider.create(slider4, {
+          start: [100],
+          connect: true,
+          range: {
+              'min': 55,
+              'max': 200
+          },
+          pips: {
+              mode: 'steps',
+              stepped: true,
+              density: 60/5
+          },
+          behaviour: 'tap-drag',
+          format: {
+              to: function (value) {
+                  return '$' + (Math.round(value*100)/100);
+              },
+              from: function (value) {
+                  return Number(value.replace(',-', ''));
+              }
+          }
+      })
+
+      slider4.noUiSlider.on('slide', e=> {
+        currentPlantPrice.value = e[0];
       });
     })
   },
@@ -715,8 +885,8 @@ canvas{
   font-size: 1.1em;
 }
 .spacer{
-  //background: url(https://lookie.jsbot.net/uploads/1Ug6ML.png) no-repeat;
-  background: url(https://lookie.jsbot.net/uploads/WlAoH.png) no-repeat;
+  //background: url(https://jsbot.cantelope.org/uploads/1Ug6ML.png) no-repeat;
+  background: url(https://jsbot.cantelope.org/uploads/WlAoH.png) no-repeat;
   background-size: 100% 60px;
   left: 0;
   margin-top: 15px;

@@ -30,7 +30,7 @@ export default {
   },
   data () {
     return {
-      backgroundVid: 'https://lookie.jsbot.net/uploads/' + [
+      backgroundVid: 'https://jsbot.cantelope.org/uploads/' + [
         '23mFub',
         '1uU1gB',
         '1JCKqo',
@@ -100,7 +100,7 @@ export default {
   box-sizing: content-box;
 }
 .applyBG{
-  background-image: url(https://lookie.jsbot.net/uploads/1Jiczn.jpg);
+  background-image: url(https://jsbot.cantelope.org/uploads/1Jiczn.jpg);
   background-position: center;
   background-repeat: repeat;
 }
