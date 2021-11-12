@@ -460,7 +460,7 @@ export default {
             el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
             el.setAttribute('data-item-description', "Plus Delivery")
             el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/Xk6oO.jpg')
-            el.setAttribute('data-item-name', "Designer's Choice - $" + (Math.round(p*100)/100))
+            el.setAttribute('data-item-name', "Designer's Choice - $" + (Math.round(p*10)/10)+'0')
             el.className = 'snipcart-add-item'
             el.style.display = 'none'
             document.body.appendChild(el)
@@ -493,7 +493,7 @@ export default {
             el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
             el.setAttribute('data-item-description', "Wrapped")
             el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/15tPHr.jpg')
-            el.setAttribute('data-item-name', "Wrapped - $" + (Math.round(p*100)/100))
+            el.setAttribute('data-item-name', "Wrapped - $" + (Math.round(p*10)/10)) + '0'
             el.className = 'snipcart-add-item'
             el.style.display = 'none'
             document.body.appendChild(el)
@@ -526,7 +526,7 @@ export default {
             el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
             el.setAttribute('data-item-description', "Gift")
             el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/14JQuG.jpg')
-            el.setAttribute('data-item-name', "Gift - $" + (Math.round(p*100)/100))
+            el.setAttribute('data-item-name', "Gift - $" + (Math.round(p*10)/10)) + '0'
             el.className = 'snipcart-add-item'
             el.style.display = 'none'
             document.body.appendChild(el)
@@ -559,7 +559,7 @@ export default {
             el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
             el.setAttribute('data-item-description', "Plant")
             el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/2h68aC.jpg')
-            el.setAttribute('data-item-name', "Plant - $" + (Math.round(p*100)/100))
+            el.setAttribute('data-item-name', "Plant - $" + (Math.round(p*10)/10))
             el.className = 'snipcart-add-item'
             el.style.display = 'none'
             document.body.appendChild(el)
@@ -661,12 +661,12 @@ export default {
           pips: {
               mode: 'steps',
               stepped: true,
-              density: 200/50
+              density: 10
           },
           behaviour: 'tap-drag',
           format: {
               to: function (value) {
-                  return '$' + (Math.round(value*100)/100) + '';
+                  return '$' + (Math.round(value*10)/10) ;
               },
               from: function (value) {
                   return Number(value.replace(',-', ''));
@@ -692,12 +692,12 @@ export default {
           pips: {
               mode: 'steps',
               stepped: true,
-              density: 60/5
+              density: 10
           },
           behaviour: 'tap-drag',
           format: {
               to: function (value) {
-                  return '$' + (Math.round(value*100)/100);
+                  return '$' + (Math.round(value*10)/10);
               },
               from: function (value) {
                   return Number(value.replace(',-', ''));
@@ -722,12 +722,12 @@ export default {
           pips: {
               mode: 'steps',
               stepped: true,
-              density: 60/5
+              density: 10
           },
           behaviour: 'tap-drag',
           format: {
               to: function (value) {
-                  return '$' + (Math.round(value*100)/100);
+                  return '$' + (Math.round(value*10)/10) ;
               },
               from: function (value) {
                   return Number(value.replace(',-', ''));
@@ -752,12 +752,12 @@ export default {
           pips: {
               mode: 'steps',
               stepped: true,
-              density: 60/5
+              density: 10
           },
           behaviour: 'tap-drag',
           format: {
               to: function (value) {
-                  return '$' + (Math.round(value*100)/100);
+                  return '$' + (Math.round(value*10)/10) ;
               },
               from: function (value) {
                   return Number(value.replace(',-', ''));
