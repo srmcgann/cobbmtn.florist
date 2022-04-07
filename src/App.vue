@@ -51,7 +51,7 @@ export default {
         {
           siteEntered: false,
           vidLoaded: false,
-          baseURL: 'https://cobbmtn.florist',
+          baseURL: 'https://cobbmtn.dweet.net',
           video: ''
         }
       ]
