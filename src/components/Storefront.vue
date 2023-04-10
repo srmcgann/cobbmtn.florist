@@ -59,7 +59,7 @@
               class="snipcart-add-item addButton"
               :data-item-id="flower.id"
               :data-item-price="flower.price"
-              :data-item-url="'https://cobbmtn.dweet.net/static/validateFlowers.php'"
+              :data-item-url="'https://cobbmtn.florist/static/validateFlowers.php'"
               :data-item-description="flower.description"
               :data-item-image="flower.image"
               :data-item-name="flower.name"
@@ -180,7 +180,7 @@
               class="snipcart-add-item addButton"
               :data-item-id="flower.id"
               :data-item-price="flower.price"
-              :data-item-url="'https://cobbmtn.dweet.net/static/validateFlowers.php'"
+              :data-item-url="'https://cobbmtn.florist/static/validateFlowers.php'"
               :data-item-description="flower.description"
               :data-item-image="flower.image"
               :data-item-name="flower.name"
@@ -217,7 +217,7 @@
               class="snipcart-add-item addCardButton"
               :data-item-id="card.id"
               :data-item-price="card.price"
-              :data-item-url="'https://cobbmtn.dweet.net/static/validateCards.php'"
+              :data-item-url="'https://cobbmtn.florist/static/validateCards.php'"
               :data-item-description="card.description"
               :data-item-image="card.image"
               :data-item-name="card.name"
@@ -457,7 +457,7 @@ export default {
             let el = document.createElement('button')
             el.setAttribute('data-item-id', id)
             el.setAttribute('data-item-price', (+p).toFixed(2))
-            el.setAttribute('data-item-url', "https://cobbmtn.dweet.net/static/validateFlowers.php")
+            el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
             el.setAttribute('data-item-description', "Plus Delivery")
             el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/Xk6oO.jpg')
             el.setAttribute('data-item-name', "Designer's Choice - $" + (Math.round(p*10)/10).toFixed(2))
@@ -474,7 +474,7 @@ export default {
       var p=price.substring(1)
       let id=0
       let sendData = {type: "Wrapped", price: p}
-      let URL = 'https://cobbmtn.dweet.net/static/getProductID.php'
+      let URL = 'https://cobbmtn.florist/static/getProductID.php'
       fetch(URL,{
         method: 'POST',
         headers: {
@@ -490,7 +490,7 @@ export default {
             let el = document.createElement('button')
             el.setAttribute('data-item-id', id)
             el.setAttribute('data-item-price', (+p).toFixed(2))
-            el.setAttribute('data-item-url', "https://cobbmtn.dweet.net/static/validateFlowers.php")
+            el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
             el.setAttribute('data-item-description', "Wrapped")
             el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/15tPHr.jpg')
             el.setAttribute('data-item-name', "Wrapped - $" + (Math.round(p*10)/10).toFixed(2))
@@ -524,7 +524,7 @@ export default {
             let el = document.createElement('button')
             el.setAttribute('data-item-id', id)
             el.setAttribute('data-item-price', (+p).toFixed(2))
-            el.setAttribute('data-item-url', "https://cobbmtn.dweet.net/static/validateFlowers.php")
+            el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
             el.setAttribute('data-item-description', "Gift")
             el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/14JQuG.jpg')
             el.setAttribute('data-item-name', "Gift - $" + (Math.round(p*10)/10).toFixed(2))
@@ -557,7 +557,7 @@ export default {
             let el = document.createElement('button')
             el.setAttribute('data-item-id', id)
             el.setAttribute('data-item-price', (+p).toFixed(2))
-            el.setAttribute('data-item-url', "https://cobbmtn.dweet.net/static/validateFlowers.php")
+            el.setAttribute('data-item-url', "https://cobbmtn.florist/static/validateFlowers.php")
             el.setAttribute('data-item-description', "Plant")
             el.setAttribute('data-item-image', 'https://jsbot.cantelope.org/uploads/2h68aC.jpg')
             el.setAttribute('data-item-name', "Plant - $" + (Math.round(p*10)/10).toFixed(2))
@@ -634,7 +634,7 @@ export default {
         })
       })
     }
-    let url = "https://cobbmtn.dweet.net/static/getData.php"
+    let url = "https://cobbmtn.florist/static/getData.php"
     fetch(url, {
       mode: 'cors',
       method: 'GET',
